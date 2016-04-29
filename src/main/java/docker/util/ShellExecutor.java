@@ -13,20 +13,24 @@ public class ShellExecutor
     {
         log.println( "cmd: " + cmd );
         String result = "";
+        int extCode = 9;
         Runtime rt = Runtime.getRuntime();
         Process pr = null;
         try
         {
             pr = rt.exec( cmd );
+            extCode = pr.waitFor();
         }
         catch ( Exception e )
         {
-            return e.getMessage();
+            log.println( e.getMessage() );
         }
+        log.println( "exit code: " + extCode );
 
 
         InputStreamReader isr = new InputStreamReader( pr.getInputStream() );
         BufferedReader br = new BufferedReader( isr );
+
 
         String line = null;
 
@@ -35,11 +39,12 @@ public class ShellExecutor
             while ( ( line = br.readLine() ) != null )
             {
                 result += " " + line;
+                log.println( line );
             }
         }
         catch ( Exception e )
         {
-            return e.getMessage();
+            log.println( e.getMessage() );
         }
 
         log.println( "result: " + result );

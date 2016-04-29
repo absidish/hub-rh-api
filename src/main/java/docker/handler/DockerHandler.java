@@ -20,7 +20,11 @@ public class DockerHandler implements Route
         {
             JSONObject params = new JSONObject( jsonBody );
             cmd = params.getString( "cmd" );
-            return ShellExecutor.execute( cmd );
+
+            String h = ShellExecutor.execute( cmd );
+            response.body( h );
+
+            return response;
         }
         catch ( Exception e )
         {
