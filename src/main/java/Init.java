@@ -1,6 +1,7 @@
 
 
 import docker.handler.DockerHandler;
+import kurjun.KurjunHelper;
 
 import static spark.Spark.port;
 import static spark.Spark.post;
@@ -12,5 +13,6 @@ public class Init
     {
         port( 82 );
         post( "/docker", new DockerHandler() );
+        post( "/docker/upload", new KurjunHelper() );
     }
 }

@@ -1,4 +1,5 @@
 /source/hub-rh-api/src/main/java/Init.java
+/source/hub-rh-api/src/main/java/kurjun/KurjunHelper.java
 /source/hub-rh-api/src/main/java/docker/handler/DockerHandler.java
 /source/hub-rh-api/src/main/java/docker/command/Command.java
 /source/hub-rh-api/src/main/java/docker/util/ShellExecutor.java

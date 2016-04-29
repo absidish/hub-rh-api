@@ -1,4 +1,5 @@
 Init.class
 docker/handler/DockerHandler.class
+kurjun/KurjunHelper.class
 docker/command/Command.class
 docker/util/ShellExecutor.class
